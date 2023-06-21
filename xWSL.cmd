@@ -21,7 +21,7 @@ IF EXIST .\CMD.EXE CD ..\..
 ECHO [xWSL Installer 20230621]
 ECHO:
 ECHO Enter a unique name for your xWSL distro or hit Enter to use default. 
-SET /p DISTRO=Keep this name simple, no space or underscore characters [UbuntuWSL2]: 
+SET /p DISTRO=Keep this name simple, no space or underscore characters [UbuntuWSL]: 
 IF EXIST "%DISTRO%" (ECHO. & ECHO Folder exists with that name, choose a new folder name. & PAUSE & GOTO DI)
 WSL.EXE -d %DISTRO% -e . > "%TEMP%\InstCheck.tmp"
 FOR /f %%i in ("%TEMP%\InstCheck.tmp") do set CHKIN=%%~zi 
